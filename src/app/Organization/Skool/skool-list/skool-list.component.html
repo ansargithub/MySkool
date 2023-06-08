@@ -1,0 +1,36 @@
+<!-- skool-list.component.html -->
+<h2>School List</h2>
+<table>
+  <tr>
+    <th>School ID</th>
+    <th>School Name</th>
+    <th>Branch ID</th>
+    <th>Branch Name</th>
+    <th>Board ID</th>
+    <th>User ID</th>
+    <th>Status</th>
+    <th>Estimated Date</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let skool of skools">
+    <td>{{ skool.skoolId }}</td>
+    <td>{{ skool.skoolName }}</td>
+    <td>{{ skool.branchId }}</td>
+    <td>{{ skool.branchName }}</td>
+    <td>{{ skool.boardId }}</td>
+    <td>{{ skool.userID }}</td>
+    <td>{{ skool.status }}</td>
+    <td>{{ skool.estDate | date }}</td>
+    <td>
+      <a routerLink="/organization/skools/view/{{skool.skoolId}}">View</a>
+     </td>
+     <td>
+      <a routerLink="/organization/skools/edit/{{skool.skoolId}}">Modify</a>
+    </td>
+      <td><button (click)="deleteSkool(skool.skoolId)">Delete</button>
+    </td>
+      </tr>
+   
+ 
+</table>
+<router-outlet></router-outlet>

@@ -1,0 +1,100 @@
+<h2>Book List</h2>
+<button mat-raised-button color="primary" (click)="getBooks()">Load Books</button>
+
+<table mat-table [dataSource]="books!" class="mat-elevation-z8">
+  <!-- Add table columns for each property of the Book class -->
+  <ng-container matColumnDef="bookCode">
+    <th mat-header-cell *matHeaderCellDef> Book Code </th>
+    <td mat-cell *matCellDef="let book"> {{ book.bookCode }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="bookId">
+    <th mat-header-cell *matHeaderCellDef> Book ID </th>
+    <td mat-cell *matCellDef="let book"> {{ book.bookId }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let book"> {{ book.title }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="size">
+    <th mat-header-cell *matHeaderCellDef> Size </th>
+    <td mat-cell *matCellDef="let book"> {{ book.size }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef> Author </th>
+    <td mat-cell *matCellDef="let book"> {{ book.author }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="color">
+    <th mat-header-cell *matHeaderCellDef> Color </th>
+    <td mat-cell *matCellDef="let book"> {{ book.color }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dated">
+    <th mat-header-cell *matHeaderCellDef> Dated </th>
+    <td mat-cell *matCellDef="let book"> {{ book.dated | date }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="isbNo">
+    <th mat-header-cell *matHeaderCellDef> ISBNo </th>
+    <td mat-cell *matCellDef="let book"> {{ book.isbNo }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="userId">
+    <th mat-header-cell *matHeaderCellDef> UserID </th>
+    <td mat-cell *matCellDef="let book"> {{ book.userId }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lmd">
+    <th mat-header-cell *matHeaderCellDef> LMD </th>
+    <td mat-cell *matCellDef="let book"> {{ book.lmd | date }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lmu">
+    <th mat-header-cell *matHeaderCellDef> LMU </th>
+    <td mat-cell *matCellDef="let book"> {{ book.lmu | date }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <td mat-cell *matCellDef="let book"> {{ book.status }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="purchaseId">
+    <th mat-header-cell *matHeaderCellDef> Purchase ID </th>
+    <td mat-cell *matCellDef="let book"> {{ book.purchaseId }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="salesOrderId">
+    <th mat-header-cell *matHeaderCellDef> Sales Order ID </th>
+    <td mat-cell *matCellDef="let book"> {{ book.salesOrderId }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="soldStatus">
+    <th mat-header-cell *matHeaderCellDef> Sold Status </th>
+    <td mat-cell *matCellDef="let book"> {{ book.soldStatus }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="barcode">
+    <th mat-header-cell *matHeaderCellDef> Barcode </th>
+    <td mat-cell *matCellDef="let book"> {{ book.barcode }} </td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+    <mat-cell *matCellDef="let book">
+      <a mat-button routerLink="/books/view/{{ book.bookId }}">View</a>
+      <a mat-button routerLink="/books/edit/{{ book.bookId }}">Edit</a>
+      
+     <!--   <button mat-button (click)="deleteOrganization(organization.organizationId)">Delete</button>-->
+    </mat-cell>
+  </ng-container>
+  <!-- Add more table columns for other properties of the Book class -->
+
+  <tr mat-header-row *matHeaderRowDef="bookColumns"></tr>
+  <tr mat-row *matRowDef="let book; columns: bookColumns;"></tr>
+</table>
+
+<router-outlet></router-outlet>

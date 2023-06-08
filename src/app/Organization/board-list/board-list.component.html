@@ -1,0 +1,16 @@
+
+<div class="contain">
+    <h2>Board List</h2>
+<mat-list>
+  <mat-list-item *ngFor="let board of boards">
+    {{ board.boardName }}
+    {{ board.webSite }}
+    <a mat-button routerLink="/organization/boards/view/{{ board.boardId }}">View</a>
+    <a mat-button routerLink="/organization/boards/edit/{{ board.boardId }}">Edit</a>
+    <button mat-icon-button color="warn" (click)="deleteBoard(board.boardId)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+</div>
+<router-outlet></router-outlet>

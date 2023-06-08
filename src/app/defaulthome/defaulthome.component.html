@@ -1,0 +1,50 @@
+<div class="container">
+    <section class="slider-section" >
+     <!--<mat-slider></mat-slider>-->
+      <div class="slider-images">
+        <img *ngFor="let image of sliderImages" [src]="image" alt="Slider Image">
+      </div>
+    </section>
+    <section class="other">
+        <div class="carousel">
+            
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="../../assets/ruqsarlogo.png" alt="Photo of a Shiba Inu" width="400" height="400">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+          </div> 
+    </section>
+    <section class="other-components-section">
+      <!-- Add your other components here -->
+      <mat-card>
+        <mat-card-content>
+          <h2>Sign In</h2>
+          <!-- Add more components as needed -->
+          <!-- <mat-form-field>
+            <input matInput placeholder="Input field">
+          </mat-form-field>
+          <mat-checkbox>Checkbox</mat-checkbox>
+          <mat-button-toggle-group>
+            <mat-button-toggle value="1">Toggle 1</mat-button-toggle>
+            <mat-button-toggle value="2">Toggle 2</mat-button-toggle>
+          </mat-button-toggle-group> -->
+          <app-login></app-login>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>

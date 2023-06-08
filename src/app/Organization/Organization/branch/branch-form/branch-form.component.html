@@ -1,0 +1,64 @@
+<h2>{{ title }}</h2>
+
+<form (ngSubmit)="onSubmit()" #branchForm="ngForm">
+
+  <mat-form-field>
+    <mat-label>Organization</mat-label>
+    <mat-select placeholder="Organization Name" name="organizationId" [(ngModel)]="branch.organizationId" required>
+      <mat-option *ngFor="let organization of organizations" [value]="organization.organizationId">
+        {{ organization.organizationName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Branch ID" name="branchId" [(ngModel)]="branch.branchId" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Branch Name" name="branchName" [(ngModel)]="branch.branchName" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="City" name="city" [(ngModel)]="branch.city" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="State" name="state" [(ngModel)]="branch.state" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Map ID" name="mapId" [(ngModel)]="branch.mapId" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Location" name="location" [(ngModel)]="branch.location" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="User ID" name="userId" [(ngModel)]="branch.userId" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="LMD" name="lmd" [(ngModel)]="branch.lmd" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="LMU" name="lmu" [(ngModel)]="branch.lmu" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    
+    <input matInput placeholder="Created Date" name="createdDate" [(ngModel)]="branch.createdDate" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Cost Center" name="costCenter" [(ngModel)]="branch.costCenter" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Region ID" name="regionId" [(ngModel)]="branch.regionId" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!branchForm.form.valid">Save</button>
+  <!-- <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button> -->
+</form>

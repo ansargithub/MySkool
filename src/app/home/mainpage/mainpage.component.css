@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    margin-right: 20px;
+  }
+  
+  .image-container {
+    width: 50%;
+  }
+  
+  .carousel {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .carousel img {
+    height: auto;
+    width: 100%;
+  }
+  

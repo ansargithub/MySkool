@@ -1,0 +1,40 @@
+Organization
+<form [formGroup]="organizationForm" (ngSubmit)="submitForm()">
+    <mat-form-field>
+      <mat-label>Organization Name</mat-label>
+      <input matInput formControlName="OrganizationName" required>
+      <mat-error *ngIf="organizationForm.get('OrganizationName')?.hasError('required')">
+        Organization Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Group Name</mat-label>
+      <input matInput formControlName="GroupName" required>
+      <mat-error *ngIf="organizationForm.get('GroupName')?.hasError('required')">
+        Group Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ledger Code</mat-label>
+      <input matInput formControlName="LedgerCode" required>
+      <mat-error *ngIf="organizationForm.get('LedgerCode')?.hasError('required')">
+        Ledger Code is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Establishment Date</mat-label>
+      <input matInput [matDatepicker]="datepicker" formControlName="EstDate" required>
+      <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+      <mat-error *ngIf="organizationForm.get('EstDate')?.hasError('required')">
+        Establishment Date is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="organizationForm.invalid">
+      Save
+    </button>
+  </form>

@@ -1,0 +1,51 @@
+h2 {
+    margin-bottom: 20px;
+  }
+  
+  mat-card {
+    margin-bottom: 20px;
+  }
+  
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .mat-column-actions {
+    text-align: center;
+  }
+  
+  .actions button {
+    margin-left: 5px;
+  }
+  
+  .actions button.mat-icon-button {
+    min-width: 0;
+    padding: 6px;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  button[mat-raised-button] {
+    margin-right: 10px;
+  }
+  
+  .mat-dialog-title {
+    margin-bottom: 10px;
+  }
+  
+  .mat-dialog-actions {
+    justify-content: flex-end;
+  }
+  
+  .mat-dialog-actions button {
+    margin-left: 10px;
+  }
+  

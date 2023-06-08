@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Organization List</h2>
+    <mat-table [dataSource]="organizations!" class="mat-elevation-z8">
+      <ng-container matColumnDef="organizationId">
+        <mat-header-cell *matHeaderCellDef> Organization ID </mat-header-cell>
+        <mat-cell *matCellDef="let organization"> {{ organization.organizationId }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="organizationName">
+        <mat-header-cell *matHeaderCellDef> Organization Name </mat-header-cell>
+        <mat-cell *matCellDef="let organization"> {{ organization.organizationName }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="groupName">
+        <mat-header-cell *matHeaderCellDef> Group Name </mat-header-cell>
+        <mat-cell *matCellDef="let organization"> {{ organization.groupName }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ledgerCode">
+        <mat-header-cell *matHeaderCellDef> Ledger Code </mat-header-cell>
+        <mat-cell *matCellDef="let organization"> {{ organization.ledgerCode }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="estDate">
+        <mat-header-cell *matHeaderCellDef> Establishment Date </mat-header-cell>
+        <mat-cell *matCellDef="let organization"> {{ organization.estDate | date:'short' }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="userId">
+        <mat-header-cell *matHeaderCellDef> User ID </mat-header-cell>
+        <mat-cell *matCellDef="let organization"> {{ organization.userId }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let organization">
+          <a mat-button routerLink="/organization/view/{{ organization.organizationId }}">View</a>
+          <a mat-button routerLink="/organization/edit/{{ organization.organizationId }}">Edit</a>
+          
+          <button mat-button (click)="deleteOrganization(organization.organizationId)">Delete</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
+<router-outlet></router-outlet>

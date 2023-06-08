@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>{{ mode === 'view' ? 'View Branch' : 'Edit Branch' }}</h2>
+
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Branch ID" [(ngModel)]="branch.branchId" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Branch Name" [(ngModel)]="branch.branchName" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="City" [(ngModel)]="branch.city" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="State" [(ngModel)]="branch.state" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Map ID" [(ngModel)]="branch.mapId" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Location" [(ngModel)]="branch.location" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="User ID" [(ngModel)]="branch.userId" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="LMD" [(ngModel)]="branch.lmd" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="LMU" [(ngModel)]="branch.lmu" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Created Date" [(ngModel)]="branch.createdDate" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Cost Center" [(ngModel)]="branch.costCenter" [disabled]="mode === 'view'">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Region ID" [(ngModel)]="branch.regionId" [disabled]="mode === 'view'">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close color="warn" *ngIf="mode === 'edit'">Cancel</button>
+  <button mat-button mat-dialog-close color="primary" *ngIf="mode === 'edit'" [mat-dialog-close]="branch" cdkFocusInitial>Save</button>
+  <button mat-button mat-dialog-close color="primary" *ngIf="mode === 'view'">Close</button>
+</mat-dialog-actions>

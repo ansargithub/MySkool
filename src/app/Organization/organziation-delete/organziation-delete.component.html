@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Delete Organization</h2>
+    <mat-card>
+      <mat-card-content>
+        <p>Are you sure you want to delete the organization?</p>
+        <p><strong>Organization Name:</strong> {{ organization!.organizationName }}</p>
+        <p><strong>Group Name:</strong> {{ organization!.groupName }}</p>
+        <p><strong>Ledger Code:</strong> {{ organization!.ledgerCode }}</p>
+        <p><strong>Establishment Date:</strong> {{ organization!.estDate | date:'short' }}</p>
+        <p><strong>User ID:</strong> {{ organization!.userId }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="deleteOrganization()">Delete</button>
+        <button mat-raised-button (click)="cancelDelete()">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

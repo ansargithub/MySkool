@@ -1,0 +1,74 @@
+<h2>Add/Edit Book</h2>
+<form (ngSubmit)="saveBook()">
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.bookCode" name="bookCode" placeholder="Book Code" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="book.bookId" name="bookId" placeholder="Book ID" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.title" name="title" placeholder="Title" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.size" name="size" placeholder="Size" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.author" name="author" placeholder="Author" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.color" name="color" placeholder="Color" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="book.dated" name="dated" placeholder="Date" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.isbNo" name="isbNo" placeholder="ISBNo" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="book.userId" name="userId" placeholder="User ID" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="pickerLmd" [(ngModel)]="book.lmd" name="lmd" placeholder="LMD" required>
+    <mat-datepicker-toggle matSuffix [for]="pickerLmd"></mat-datepicker-toggle>
+    <mat-datepicker #pickerLmd></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="pickerLmu" [(ngModel)]="book.lmu" name="lmu" placeholder="LMU" required>
+    <mat-datepicker-toggle matSuffix [for]="pickerLmu"></mat-datepicker-toggle>
+    <mat-datepicker #pickerLmu></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.status" name="status" placeholder="Status" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="book.purchaseId" name="purchaseId" placeholder="Purchase ID" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="book.salesOrderId" name="salesOrderId" placeholder="Sales Order ID" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.soldStatus" name="soldStatus" placeholder="Sold Status" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="book.barcode" name="barcode" placeholder="Barcode" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Save</button>
+</form>

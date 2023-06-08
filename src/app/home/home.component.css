@@ -1,0 +1,37 @@
+.footer {
+    background-color: rgb(28, 101, 191);
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 35px;
+    margin-bottom: 0px;
+    overflow-wrap: normal;
+  }
+  
+
+  
+  .body {
+    margin-bottom: 50px;
+  }
+   .mat-sidenav-container {
+    height: 400px;
+    width: 200px;
+    
+  }
+  /*
+  .mat-sidenav {
+    
+    width: 250px; 
+  }*/
+  .container
+  {
+   width: 100%;
+position:absolute;
+   left:0px;
+  }
+  .maindiv
+  {
+    display: flex;
+    flex-direction: row;
+  }

@@ -1,0 +1,27 @@
+:host {
+    display: block;
+    width: 800px;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    :host {
+      width: 90%;
+    }
+  }
+  

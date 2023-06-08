@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Edit Organization</h2>
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="Organization Name" [(ngModel)]="organization!.organizationName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Group Name" [(ngModel)]="organization!.groupName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Ledger Code" [(ngModel)]="organization!.ledgerCode">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="estDatePicker" placeholder="Establishment Date" [(ngModel)]="organization!.estDate">
+          <mat-datepicker-toggle matSuffix [for]="estDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #estDatePicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="User ID" [(ngModel)]="organization!.userId">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="updateOrganization()">Save</button>
+        <button mat-raised-button color="warn" (click)="deleteOrganization()">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

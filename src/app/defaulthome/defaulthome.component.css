@@ -1,0 +1,22 @@
+.container {
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    vertical-align: middle;
+  }
+  
+  .slider-section {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(154, 110, 185);
+   
+   
+  }
+  
+  .other-components-section {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+   
+  }
+  

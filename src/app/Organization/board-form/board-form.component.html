@@ -1,0 +1,25 @@
+<h2>{{ board.BoardId ? 'Edit Board' : 'Add Board' }}</h2>
+<form>
+  <mat-form-field>
+    <input matInput placeholder="Board Name" [(ngModel)]="board.boardName" name="boardName">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Description" [(ngModel)]="board.description" name="description">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Affiliated To" [(ngModel)]="board.affliatedTo" name="affiliatedTo">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Region" [(ngModel)]="board.region" name="region">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Contact Person" [(ngModel)]="board.rontactPerson" name="contactPerson">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" [(ngModel)]="board.email" name="email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Website" [(ngModel)]="board.webSite" name="website">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="saveBoard()">{{ board.BoardId ? 'Update' : 'Save' }}</button>
+</form>
