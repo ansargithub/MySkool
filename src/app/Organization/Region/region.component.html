@@ -1,1 +1,55 @@
-<p>region works!</p>
+<div>
+    <form [formGroup]="regionForm">
+      <mat-form-field>
+        <input matInput placeholder="Region ID" formControlName="regionId">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Region Name" formControlName="regionName">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addRegion()">Add</button>
+      <button mat-raised-button color="warn" (click)="clearForm()">Clear</button>
+    </form>
+  </div>
+  
+  <div *ngIf="regions.length > 0">
+    <mat-table [dataSource]="regions">
+      <ng-container matColumnDef="regionId">
+        <mat-header-cell *matHeaderCellDef> Region ID </mat-header-cell>
+        <mat-cell *matCellDef="let region"> {{ region.regionId }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="regionName">
+        <mat-header-cell *matHeaderCellDef> Region Name </mat-header-cell>
+        <mat-cell *matCellDef="let region"> {{ region.regionName }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let region">
+          <button mat-icon-button color="primary" (click)="viewRegion(region)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" (click)="editRegion(region)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteRegion(region.regionId)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="['regionId', 'regionName', 'actions']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['regionId', 'regionName', 'actions'];"></mat-row>
+    </mat-table>
+  </div>
+  
+  <div *ngIf="selectedRegion">
+    <h3>View Region</h3>
+    <form [formGroup]="regionForm" (ngSubmit)="updateRegion()">
+      <mat-form-field>
+        <input matInput placeholder="Region ID" formControlName="regionId" readonly="true">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Region Name" formControlName="regionName" readonly="true">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Update</button>
+    </form>
+  </div>
+  

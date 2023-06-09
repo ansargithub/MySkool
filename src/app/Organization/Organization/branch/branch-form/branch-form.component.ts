@@ -4,6 +4,11 @@ import { Branch } from '../branch';
 import { BranchService } from '../branch.service';
 import { Organization } from 'src/app/data-models/organization';
 import { OrganizationService } from 'src/app/services/organization.service';
+import { StateService } from 'src/app/Organization/State/state.service';
+import { RegionService } from 'src/app/Organization/Region/region.service';
+import { SkoolService } from 'src/app/Organization/Skool/skool.service';
+import { State } from 'src/app/Organization/State/state';
+import { Region } from 'src/app/Organization/Region/region';
 
 @Component({
   selector: 'app-branch-form',
@@ -16,7 +21,14 @@ export class BranchFormComponent implements OnInit {
   branch: Branch = new Branch();
   title: string;
   organizations:Organization[];
-  constructor(private branchService: BranchService,private orgservice:OrganizationService) { }
+  skools:any[];
+  states:State[];
+  regions:Region[];
+
+
+  constructor(private branchService: BranchService,private orgservice:OrganizationService,
+    private skoolserv:SkoolService,private stateserv:StateService,private regionserv:RegionService
+    ) { }
 
   ngOnInit() {
     // Set the appropriate title based on the mode (Add/Edit)
@@ -28,7 +40,14 @@ export class BranchFormComponent implements OnInit {
     this.orgservice.getOrganizations().subscribe((organizations) => {
       this.organizations = organizations;
     });
+
+    this.skoolserv.getSkools().subscribe((skools)=>{ this.skools=skools;})
+
+    this.stateserv.getStates().subscribe((states=>{this.states=states;}));
+    this.regionserv.getRegions().subscribe((regions=>{this.regions=regions;}));
   }
+
+
 
   onSubmit() {
     if (this.branchService.isEditMode) {

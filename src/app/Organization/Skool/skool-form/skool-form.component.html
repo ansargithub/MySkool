@@ -2,6 +2,25 @@
 <h2>{{ isEditing ? 'Edit School' : 'Add School' }}</h2>
 <form [formGroup]="skoolForm" (ngSubmit)="saveSkool()">
   <mat-form-field>
+    <mat-label>Organization</mat-label>
+    <mat-select placeholder="Organization Name" name="organizationId"  formControlName="organizationId" required>
+      <mat-option *ngFor="let organization of organizations" [value]="organization.organizationId">
+        {{ organization.organizationName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Boards</mat-label>
+    <mat-select placeholder="Board Name" name="boardId"  formControlName="boardId" required>
+      <mat-option *ngFor="let board of boards" [value]="board.boardId">
+        {{ board.boardName }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  
+  <mat-form-field>
     <mat-label>School Name</mat-label>
     <input matInput formControlName="skoolName" required>
     <mat-error *ngIf="skoolForm.controls['skoolName'].hasError('required')">
@@ -9,7 +28,7 @@
     </mat-error>
   </mat-form-field>
   
-  <mat-form-field>
+<!--   <mat-form-field>
     <mat-label>Branch ID</mat-label>
     <input matInput formControlName="branchId" required>
     <mat-error *ngIf="skoolForm.controls['branchId'].hasError('required')">
@@ -24,15 +43,15 @@
       Branch Name is required.
     </mat-error>
   </mat-form-field>
-  
-  <mat-form-field>
+   -->
+  <!-- <mat-form-field>
     <mat-label>Board ID</mat-label>
     <input matInput formControlName="boardId" required>
     <mat-error *ngIf="skoolForm.controls['boardId'].hasError('required')">
       Board ID is required.
     </mat-error>
   </mat-form-field>
-  
+   -->
   <mat-form-field>
     <mat-label>User ID</mat-label>
     <input matInput formControlName="userID" required>
@@ -41,38 +60,38 @@
     </mat-error>
   </mat-form-field>
   
-  <mat-form-field>
+ <!--  <mat-form-field>
     <mat-label>Status</mat-label>
     <input matInput formControlName="status" required>
     <mat-error *ngIf="skoolForm.controls['status'].hasError('required')">
       Status is required.
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> -->
   
   <mat-form-field>
-    <mat-label>Estimated Date</mat-label>
-    <input matInput [matDatepicker]="estDatePicker" formControlName="estDate" required>
+    <mat-label>Establis Date</mat-label>
+    <input matInput [matDatepicker]="estDatePicker" formControlName="estDate" >
     <mat-datepicker-toggle matSuffix [for]="estDatePicker"></mat-datepicker-toggle>
     <mat-datepicker #estDatePicker></mat-datepicker>
-    <mat-error *ngIf="skoolForm.controls['estDate'].hasError('required')">
+    <!-- <mat-error *ngIf="skoolForm.controls['estDate'].hasError('required')">
       Estimated Date is required.
-    </mat-error>
+    </mat-error> -->
   </mat-form-field>
   
   <mat-form-field>
     <mat-label>Geo Latitude</mat-label>
-    <input matInput formControlName="geoLatitude" required>
-    <mat-error *ngIf="skoolForm.controls['geoLatitude'].hasError('required')">
+    <input matInput formControlName="geoLatitude" >
+   <!--  <mat-error *ngIf="skoolForm.controls['geoLatitude'].hasError('required')">
       Geo Latitude is required.
-    </mat-error>
+    </mat-error> -->
   </mat-form-field>
   
   <mat-form-field>
     <mat-label>Geo Longitude</mat-label>
-    <input matInput formControlName="geoLongitude" required>
-    <mat-error *ngIf="skoolForm.controls['geoLongitude'].hasError('required')">
+    <input matInput formControlName="geoLongitude" >
+   <!--  <mat-error *ngIf="skoolForm.controls['geoLongitude'].hasError('required')">
       Geo Longitude is required.
-    </mat-error>
+    </mat-error> -->
   </mat-form-field>
   
   <mat-form-field>
@@ -85,13 +104,13 @@
   
   <mat-form-field>
     <mat-label>Area</mat-label>
-    <input matInput formControlName="area" required>
-    <mat-error *ngIf="skoolForm.controls['area'].hasError('required')">
+    <input matInput formControlName="area" >
+    <!-- <mat-error *ngIf="skoolForm.controls['area'].hasError('required')">
       Area is required.
-    </mat-error>
+    </mat-error> -->
   </mat-form-field>
   
-  <mat-form-field>
+ <!--  <mat-form-field>
     <mat-label>LMD</mat-label>
     <input matInput [matDatepicker]="lmdDatePicker" formControlName="lmd" required>
     <mat-datepicker-toggle matSuffix [for]="lmdDatePicker"></mat-datepicker-toggle>
@@ -107,15 +126,15 @@
     <mat-error *ngIf="skoolForm.controls['lmu'].hasError('required')">
       LMU is required.
     </mat-error>
-  </mat-form-field>
+  </mat-form-field> -->
   
-  <mat-form-field>
+ <!--  <mat-form-field>
     <mat-label>Organization ID</mat-label>
     <input matInput formControlName="organizationId" required>
     <mat-error *ngIf="skoolForm.controls['organizationId'].hasError('required')">
       Organization ID is required.
     </mat-error>
   </mat-form-field>
-  
+   -->
   <button type="submit">{{ isEditing ? 'Update' : 'Save' }}</button>
 </form>

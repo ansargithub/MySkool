@@ -12,5 +12,7 @@ export class Branch {
     costCenter: string;
     regionId: number;
     organizationId:number;
+    skoolId:number;
+    stateId:number;
   }
   
