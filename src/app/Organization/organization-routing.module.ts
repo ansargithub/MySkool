@@ -14,6 +14,7 @@ import { BranchFormComponent } from './Organization/branch/branch-form/branch-fo
 import { BranchListComponent } from './Organization/branch/branchslist/branchslist.component';
 import { StateComponent } from './State/state.component';
 import { RegionComponent } from './Region/region.component';
+import { BranchListViewComponent } from './Organization/branch/branchslistview/branchslistview.component';
 
 const routes: Routes = [{
   path: '',
@@ -47,6 +48,7 @@ const routes: Routes = [{
   ]}
   
   ,{ path:'branch/new',component:BranchFormComponent},
+  { path:'branch/list',component:BranchListViewComponent},
 { path:'branchs',component:BranchListComponent,
   children:[
    { path: 'view/:id', component: BranchFormComponent },

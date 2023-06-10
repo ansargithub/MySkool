@@ -35,7 +35,7 @@ const TREE_DATA: FoodNode[] = [
       ]},
       {
         name: 'Branchs',
-        children: [{name: 'List',route:"organization/branchs"}, {name: 'Add ',route:'organization/branch/new'},
+        children: [{name: 'All Branch',route:"organization/branch/list"},{name: 'List Branch',route:"organization/branchs"}, {name: 'Add ',route:'organization/branch/new'},
         
       ]},
       {

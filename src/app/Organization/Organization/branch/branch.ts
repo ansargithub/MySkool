@@ -3,9 +3,9 @@ export class Branch {
     branchName: string;
     city: string;
     state: string;
-    mapId: number;
+    mapId: string;
     location: string;
-    userId: number;
+    userId: string;
     lmd: Date;
     lmu: string;
     createdDate: Date;
@@ -14,5 +14,6 @@ export class Branch {
     organizationId:number;
     skoolId:number;
     stateId:number;
+   
   }
   

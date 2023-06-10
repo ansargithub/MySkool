@@ -1,0 +1,64 @@
+<h2>Branch List</h2>
+
+<mat-table [dataSource]="dataSource" matSort>
+
+  <!-- Branch ID Column -->
+  <ng-container matColumnDef="branchId">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Branch ID</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.branchId }}</mat-cell>
+  </ng-container>
+
+  <!-- Branch Name Column -->
+  <ng-container matColumnDef="branchName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Branch Name</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.branchName }}</mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="institution">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Institution</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.institution }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="organization">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Organization</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.organization }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="boardName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Board Name</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.boardName }}</mat-cell>
+  </ng-container>
+
+  <!-- City Column -->
+  <ng-container matColumnDef="city">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.city }}</mat-cell>
+  </ng-container>
+
+  <!-- State Column -->
+  <ng-container matColumnDef="stateName">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>State</mat-header-cell>
+    <mat-cell *matCellDef="let branch">{{ branch.stateName }}</mat-cell>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let branch">
+      <button mat-icon-button color="primary" (click)="onView(branch)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" (click)="onEdit(branch)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="onDelete(branch)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let branch; columns: displayedColumns;"></mat-row>
+</mat-table>

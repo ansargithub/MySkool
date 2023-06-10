@@ -17,7 +17,9 @@ export class SkoolService {
   getSkool(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
-
+  getSkoolbyorg(orgid: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/GetOrganizationSkools?orgid=${orgid}`);
+  }
   addSkool(skool: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, skool);
   }

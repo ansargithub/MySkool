@@ -9,6 +9,7 @@ import { RegionService } from 'src/app/Organization/Region/region.service';
 import { SkoolService } from 'src/app/Organization/Skool/skool.service';
 import { State } from 'src/app/Organization/State/state';
 import { Region } from 'src/app/Organization/Region/region';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-branch-form',
@@ -24,8 +25,8 @@ export class BranchFormComponent implements OnInit {
   skools:any[];
   states:State[];
   regions:Region[];
-
-
+  organizaton:Organization;
+  selstate:State;
   constructor(private branchService: BranchService,private orgservice:OrganizationService,
     private skoolserv:SkoolService,private stateserv:StateService,private regionserv:RegionService
     ) { }
@@ -41,13 +42,35 @@ export class BranchFormComponent implements OnInit {
       this.organizations = organizations;
     });
 
-    this.skoolserv.getSkools().subscribe((skools)=>{ this.skools=skools;})
+   /*  this.skoolserv.getSkools().subscribe((skools)=>{ this.skools=skools;}) */
 
     this.stateserv.getStates().subscribe((states=>{this.states=states;}));
     this.regionserv.getRegions().subscribe((regions=>{this.regions=regions;}));
   }
+ getskoolsorg()
+ {
+  this.skoolserv.getSkoolbyorg(this.branch.organizationId).subscribe((skools)=>{ this.skools=skools;})
 
-
+ }
+setregion(myval:number)
+{
+   
+  if (myval!)
+  {
+    this.stateserv.getState(myval).subscribe((stated)=>{
+      
+      this.selstate=stated;
+    
+      if (this.selstate!=null)
+      {
+        this.branch.regionId=this.selstate.regionId;
+        
+      }
+    });
+   
+  }
+  
+}
 
   onSubmit() {
     if (this.branchService.isEditMode) {

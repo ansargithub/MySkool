@@ -23,6 +23,7 @@ import { BranchDialogueComponent } from './Organization/branch/branchdialogue/br
 import { StateComponent } from './State/state.component';
 import { RegionComponent } from './Region/region.component';
 import { StateViewDialogComponent } from './State/stateviewdialog.component';
+import { BranchListViewComponent } from './Organization/branch/branchslistview/branchslistview.component';
 @NgModule({
   declarations: [
  OrganizationComponent,
@@ -40,7 +41,7 @@ import { StateViewDialogComponent } from './State/stateviewdialog.component';
 BranchListComponent,
  BranchDialogueComponent,
  StateComponent,
- RegionComponent,StateViewDialogComponent,
+ RegionComponent,StateViewDialogComponent,BranchListViewComponent,
  
  
 

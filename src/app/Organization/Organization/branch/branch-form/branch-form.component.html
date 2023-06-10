@@ -4,7 +4,7 @@
 
   <mat-form-field>
     <mat-label>Organization</mat-label>
-    <mat-select placeholder="Organization Name" name="organizationId" [(ngModel)]="branch.organizationId" required>
+    <mat-select placeholder="Organization Name" name="organizationId" [(ngModel)]="branch.organizationId" (selectionChange)="getskoolsorg()" required>
       <mat-option *ngFor="let organization of organizations" [value]="organization.organizationId">
         {{ organization.organizationName }}
       </mat-option>
@@ -20,7 +20,7 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>State</mat-label>
-    <mat-select placeholder="Name of State" name="stateId" [(ngModel)]="branch.stateId" required>
+    <mat-select placeholder="Name of State" name="stateId" [(ngModel)]="branch.stateId" (selectionChange)="setregion($event.value)" required>
       <mat-option *ngFor="let state of states" [value]="state.stateID">
         {{ state.stateName }}
       </mat-option>
@@ -28,7 +28,7 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>Region</mat-label>
-    <mat-select placeholder="Region Name" name="regionId" [(ngModel)]="branch.regionId" required>
+    <mat-select placeholder="Region Name" name="regionId" [(ngModel)]="branch.regionId" disabled="true" required>
       <mat-option *ngFor="let region of regions" [value]="region.regionId">
         {{ region.regionName }}
       </mat-option>
@@ -45,7 +45,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="City" name="city" [(ngModel)]="branch.city" required>
+    <input matInput placeholder="City" name="city" [(ngModel)]="branch.city" >
   </mat-form-field>
 
   <!-- <mat-form-field>
@@ -53,11 +53,11 @@
   </mat-form-field -->>
 
   <mat-form-field>
-    <input matInput placeholder="Map ID" name="mapId" [(ngModel)]="branch.mapId" required>
+    <input matInput placeholder="Map ID" name="mapId" [(ngModel)]="branch.mapId" >
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Location" name="location" [(ngModel)]="branch.location" required>
+    <input matInput placeholder="Location" name="location" [(ngModel)]="branch.location" >
   </mat-form-field>
 
   <mat-form-field>
@@ -74,11 +74,11 @@
 
   <mat-form-field>
     
-    <input matInput placeholder="Establish Date" name="createdDate" [(ngModel)]="branch.createdDate" required>
+    <input matInput placeholder="Establish Date" name="createdDate" [(ngModel)]="branch.createdDate" >
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput placeholder="Cost Center" name="costCenter" [(ngModel)]="branch.costCenter" required>
+    <input matInput placeholder="Cost Center" name="costCenter" [(ngModel)]="branch.costCenter" >
   </mat-form-field>
 
   <!-- <mat-form-field>

@@ -28,4 +28,8 @@ export class StateService {
     const url = `${this.apiUrl}/${stateId}`;
     return this.http.delete<void>(url);
   }
+  getState(stateId: number): Observable<State> {
+    const url = `${this.apiUrl}/${stateId}`;
+    return this.http.get<State>(url);
+  }
 }

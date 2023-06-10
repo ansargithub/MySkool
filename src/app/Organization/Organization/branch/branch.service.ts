@@ -25,7 +25,9 @@ export class BranchService {
   getBranches(): Observable<Branch[]> {
     return this.http.get<Branch[]>(this.apiUrl);
   }
-
+  getBrancheslist(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl+'/GetBranchsList');
+  }
   addBranch(branch: Branch): Observable<any> {
     return this.http.post(this.apiUrl, branch);
   }

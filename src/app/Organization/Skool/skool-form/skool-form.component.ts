@@ -44,7 +44,7 @@ export class SkoolFormComponent implements OnInit {
     else
     { 
       this.currentuser=this.userService.getCurrentUser();
-      this.skoolForm.controls['userID'].setValue(this.currentuser.username);}
+      this.skoolForm.controls['userID'].setValue(this.currentuser!.username!);}
 
       
   }
